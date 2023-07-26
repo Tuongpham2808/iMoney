@@ -12,6 +12,7 @@
               id="email"
               class="px-4 py-3 mt-1 border border-gray-300 rounded-lg outline-none"
               placeholder="example@gmail.com"
+              v-model="email"
             />
           </div>
           <div class="flex flex-col row">
@@ -23,6 +24,7 @@
               id="password"
               class="px-4 py-3 mt-1 border border-gray-300 rounded-lg outline-none"
               placeholder="Example123"
+              v-model="password"
             />
           </div>
           <div class="row">
@@ -51,10 +53,15 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   setup() {
+    const email = ref("");
+    const password = ref("");
+
     function onSubmit() {}
-    return { onSubmit };
+    return { onSubmit, email, password };
   },
 };
 </script>

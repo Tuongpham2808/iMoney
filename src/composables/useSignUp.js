@@ -1,10 +1,10 @@
 import { ref } from "vue";
 import { projectAuth } from "@/configs/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const error = ref(null);
 const isPending = ref(false);
-async function signup() {
+async function signup(email, password, fullName) {
   error.value = null;
   try {
     isPending.value = true;
@@ -14,6 +14,9 @@ async function signup() {
       password
     );
     if (!response) throw new Error("Could not create a new user");
+
+    await updateProfile(response.user, { displayName: fullName });
+
     return response;
   } catch (err) {
     console.log(err);
@@ -23,6 +26,6 @@ async function signup() {
   }
 }
 
-export function useSignUp(email, password, fullName) {
+export function useSignUp() {
   return { error, isPending, signup };
 }

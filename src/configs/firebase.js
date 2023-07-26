@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import firebase from "firebase";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, serverTimestamp } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,6 +19,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const projectAuth = getAuth(app);
 const projectFirestore = getFirestore(app);
-const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+const timestamp = serverTimestamp();
 
 export { projectAuth, projectFirestore, timestamp };

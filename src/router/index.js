@@ -18,6 +18,15 @@ const routes = [
     component: () =>
       import(/* webpackChunkName:"Register" */ "../views/Register.vue"),
   },
+  {
+    path: "/login",
+    name: "Login",
+    meta: {
+      layout: "auth",
+    },
+    component: () =>
+      import(/* webpackChunkName:"Login" */ "../views/Login.vue"),
+  },
 ];
 
 const router = createRouter({

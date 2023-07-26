@@ -11,7 +11,6 @@ import { PUBLIC_LAYOUT } from "@/constants";
 export default {
   setup() {
     const route = useRouter();
-    console.log(route.currentRoute.value);
 
     return {
       layout: computed(
@@ -24,5 +23,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

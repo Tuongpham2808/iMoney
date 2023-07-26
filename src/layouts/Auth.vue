@@ -1,10 +1,16 @@
 <template>
+  <NavigationBrand />
   <slot />
 </template>
-  
-  <script>
-export default {};
+
+<script>
+import NavigationBrand from "@/components/NavigationBrand.vue";
+
+export default {
+  components: {
+    NavigationBrand,
+  },
+};
 </script>
-  
-  <style>
-</style>
+
+<style></style>

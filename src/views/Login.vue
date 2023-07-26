@@ -4,18 +4,6 @@
       <form @submit.prevent="onSubmit">
         <div class="flex flex-col justify-start gap-6">
           <div class="flex flex-col row">
-            <label for="fullName">
-              <span class="font-semibold">Full name</span>
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              class="px-4 py-3 mt-1 border border-gray-300 rounded-lg outline-none"
-              placeholder="iMoney..."
-              v-model="fullName"
-            />
-          </div>
-          <div class="flex flex-col row">
             <label for="email">
               <span class="font-semibold">Email address</span>
             </label>
@@ -24,7 +12,6 @@
               id="email"
               class="px-4 py-3 mt-1 border border-gray-300 rounded-lg outline-none"
               placeholder="example@gmail.com"
-              v-model="email"
             />
           </div>
           <div class="flex flex-col row">
@@ -36,7 +23,6 @@
               id="password"
               class="px-4 py-3 mt-1 border border-gray-300 rounded-lg outline-none"
               placeholder="Example123"
-              v-model="password"
             />
           </div>
           <div class="row">
@@ -44,19 +30,19 @@
               type="submit"
               class="w-full px-4 py-3 font-bold text-center text-white rounded-lg bg-primary"
             >
-              Sign Ụp
+              Sign In
             </button>
           </div>
         </div>
       </form>
 
       <div class="w-full mt-6 text-center">
-        <span>I'm already a remember.</span>
+        <span>I'm a new user.</span>
         <span class="ml-1">
           <router-link
-            :to="{ name: 'Login', params: {} }"
+            :to="{ name: 'Register', params: {} }"
             class="font-bold text-primary"
-            >Sign in</router-link
+            >Sign up</router-link
           >
         </span>
       </div>
@@ -65,17 +51,10 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
   setup() {
-    const fullName = ref("");
-    const email = ref("");
-    const password = ref("");
-
     function onSubmit() {}
-
-    return { fullName, email, password, onSubmit };
+    return { onSubmit };
   },
 };
 </script>
